@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Professional Profile</title>
+    <style>
+        :root {
+            --primary-bg: #f4f7f6;
+            --card-bg: #ffffff;
+            --text-color: #333;
+            --accent-color: #007bff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--primary-bg);
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .profile-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+        }
+
+        .profile-pic {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--accent-color);
+        }
+
+        h1 { margin: 15px 0 5px; font-size: 1.5rem; }
+        p { color: #666; margin-bottom: 25px; }
+
+        .links { display: flex; flex-direction: column; gap: 15px; }
+
+        .link-item {
+            text-decoration: none;
+            color: white;
+            background-color: var(--accent-color);
+            padding: 12px;
+            border-radius: 8px;
+            transition: transform 0.2s, background-color 0.2s;
+            font-weight: bold;
+        }
+
+        .link-item:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="profile-card">
+        <img src="https://via.placeholder.com/150" alt="Profile Picture" class="profile-pic">
+        
+        <h1>Your Name</h1>
+        <p>Data Analyst | Tableau & SQL Enthusiast</p>
+
+        <div class="links">
+            <a href="https://github.com/yourusername" class="link-item">GitHub Portfolio</a>
+            <a href="https://linkedin.com/in/yourusername" class="link-item">LinkedIn</a>
+            <a href="mailto:yourname@email.com" class="link-item">Contact Me</a>
+        </div>
+    </div>
+
+</body>
+</html>
