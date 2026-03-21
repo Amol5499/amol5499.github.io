@@ -12,9 +12,10 @@
             --accent-blue: #2d74ff;
             --text-main: #ffffff;
             --text-dim: #a0aec0;
-            --section-light: #ffffff;
+            --section-light: #ffffff; /* Background for skills section */
         }
 
+        /* Enables smooth sliding when clicking links */
         html { scroll-behavior: smooth; }
 
         body {
@@ -33,7 +34,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 2rem 8%;
-            position: fixed;
+            position: fixed; /* Keeps nav visible while scrolling */
             top: 0;
             width: 84%;
             background: rgba(10, 17, 32, 0.8);
@@ -55,9 +56,14 @@
         }
 
         .nav-links a:hover, .nav-links a.active { color: var(--text-main); }
+        .active { color: var(--accent-yellow) !important; border-bottom: 1px solid var(--accent-yellow); }
 
         /* Hero Section */
-        .hero { padding: 12rem 8% 8rem; max-width: 900px; }
+        .hero {
+            padding: 12rem 8% 8rem;
+            max-width: 900px;
+        }
+
         .badge {
             display: inline-block;
             background: rgba(45, 116, 255, 0.1);
@@ -71,106 +77,97 @@
             margin-bottom: 2rem;
         }
 
-        h1 { font-family: 'Playfair Display', serif; font-size: clamp(3rem, 8vw, 5rem); line-height: 1.1; margin: 0 0 2rem 0; }
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3rem, 8vw, 5rem);
+            line-height: 1.1;
+            margin: 0 0 2rem 0;
+        }
+
         h1 em { color: var(--accent-yellow); font-style: italic; }
-        .description { font-size: 1.1rem; color: var(--text-dim); max-width: 600px; margin-bottom: 3rem; }
+
+        .description {
+            font-size: 1.1rem;
+            color: var(--text-dim);
+            max-width: 600px;
+            margin-bottom: 3rem;
+        }
 
         .btn-group { display: flex; gap: 20px; }
-        .btn { padding: 12px 30px; border-radius: 8px; text-decoration: none; font-weight: 600; transition: 0.3s; cursor: pointer; }
-        .btn-primary { background: var(--accent-blue); color: white; border: none; }
-        .btn-outline { border: 1px solid #334155; color: white; }
-
-        /* --- Skills Section --- */
-        #skills { background-color: var(--section-light); padding: 6rem 8%; color: #1e293b; }
-        .sub-header { color: var(--accent-blue); text-transform: uppercase; font-size: 0.75rem; font-weight: 700; letter-spacing: 1.5px; margin-bottom: 1rem; display: block; }
-        .section-headline { font-family: 'Playfair Display', serif; font-size: 2.8rem; margin: 0 0 1rem 0; }
-        .skills-container { display: flex; gap: 24px; flex-wrap: wrap; }
-        .skill-card { background: #f1f5f9; border: 1px solid #e2e8f0; border-radius: 16px; padding: 2.5rem; flex: 1; min-width: 320px; }
-        .pill-group { display: flex; flex-wrap: wrap; gap: 10px; }
-        .pill { background: #ffffff; border: 1px solid #e2e8f0; padding: 8px 18px; border-radius: 50px; font-size: 0.85rem; color: #334155; }
-
-        /* --- EXPERIENCE SECTION --- */
-        #experience { background-color: #f8fafc; padding: 6rem 8%; color: #1e293b; }
-        
-        .timeline { position: relative; max-width: 950px; margin-top: 40px; padding-left: 40px; }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: #e2e8f0;
-        }
-
-        .exp-card {
-            background: #ffffff;
-            border: 1px solid #e2e8f0;
-            border-radius: 12px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            position: relative;
-        }
-
-        .exp-card::before {
-            content: '';
-            position: absolute;
-            left: -47.5px; 
-            top: 28px;
-            width: 14px;
-            height: 14px;
-            background: #ffffff;
-            border: 3px solid var(--accent-blue);
-            border-radius: 50%;
-            z-index: 2;
-        }
-
-        .exp-card.current::before { border-color: var(--accent-yellow); }
-
-        .exp-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.5rem; }
-        .job-title { font-size: 1.3rem; font-weight: 700; color: #0f172a; margin: 0; }
-        .current-tag { background: #fffbeb; color: #b45309; padding: 2px 8px; border-radius: 4px; font-size: 0.7rem; margin-left: 8px; font-weight: 600; }
-        .comp-info { color: var(--accent-blue); font-size: 0.95rem; font-weight: 600; margin-top: 4px; }
-
-        /* Updated Padded Date Styling */
-        .exp-date { 
-            background: #f1f5f9;
-            color: #64748b; 
-            font-size: 0.8rem; 
-            font-weight: 500;
-            padding: 6px 16px;
-            border: 1px solid #e2e8f0;
-            border-radius: 50px;
-            white-space: nowrap;
-        }
-
-        .exp-bullets { list-style: none; padding: 0; margin: 0; }
-        .exp-bullets li { position: relative; padding-left: 25px; margin-bottom: 10px; font-size: 0.95rem; color: #475569; }
-        .exp-bullets li::before { content: '→'; position: absolute; left: 0; color: var(--accent-blue); font-weight: bold; }
-
-        /* --- BACK TO TOP BUTTON --- */
-        #backToTop {
-            position: fixed;
-            bottom: 40px;
-            right: 40px;
-            width: 50px;
-            height: 50px;
-            background-color: #334155;
-            color: white;
-            border: none;
+        .btn {
+            padding: 12px 30px;
             border-radius: 8px;
-            cursor: pointer;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            z-index: 2000;
+            text-decoration: none;
+            font-weight: 600;
             transition: 0.3s;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
         }
 
-        #backToTop:hover { background-color: var(--accent-blue); transform: translateY(-5px); }
+        .btn-primary { background: var(--accent-blue); color: white; }
+        .btn-primary:hover { background: #1a56cc; transform: translateY(-2px); }
+        .btn-outline { border: 1px solid #334155; color: white; }
+        .btn-outline:hover { background: rgba(255,255,255,0.05); }
 
+        /* --- Skills Section (White Background) --- */
+        #skills {
+            background-color: var(--section-light);
+            padding: 6rem 8%;
+            color: #1e293b;
+        }
+
+        .sub-header {
+            color: var(--accent-blue);
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .section-headline {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            margin: 0 0 1rem 0;
+        }
+
+        .section-desc { color: #64748b; font-size: 1.1rem; margin-bottom: 3rem; }
+
+        .skills-container {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .skill-card {
+            background: #f1f5f9;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 2.5rem;
+            flex: 1;
+            min-width: 320px;
+        }
+
+        .card-label {
+            color: var(--accent-blue);
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .pill-group { display: flex; flex-wrap: wrap; gap: 10px; }
+
+        .pill {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            padding: 8px 18px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            color: #334155;
+            font-weight: 500;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
     </style>
 </head>
 <body>
@@ -179,21 +176,25 @@
         <div class="logo">Amol <span>Agarwal</span></div>
         <div class="nav-links">
             <a href="#skills">Skills</a>
-            <a href="#experience">Experience</a>
+            <a href="#">Experience</a>
+            <a href="#">Projects</a>
             <a href="#">Contact</a>
             <a href="#" class="active">About Me</a>
         </div>
     </nav>
 
     <section class="hero">
-        <div class="badge">Product Specialist, Pune, India</div>
+        <div class="badge">Product Specialist • Pune, India</div>
         <h1>Building insights that <em>matter.</em></h1>
+        
         <p class="description">
-            I specialize in transforming complex data into actionable stories[cite: 3].
-            I thrive at the intersection of business intelligence and user-centric design[cite: 3].
+            I specialize in transforming complex data into actionable stories using Tableau and SQL. 
+            I thrive at the intersection of business intelligence and user-centric design—turning 
+            raw numbers into clear, measurable decisions through analytical thinking.
         </p>
+
         <div class="btn-group">
-            <a href="#experience" class="btn btn-primary">View Experience</a>
+            <a href="#" class="btn btn-primary">View Experience</a>
             <a href="#" class="btn btn-outline">Get In Touch</a>
         </div>
     </section>
@@ -201,6 +202,8 @@
     <section id="skills">
         <span class="sub-header">What I Bring</span>
         <h2 class="section-headline">Skills & Tools</h2>
+        <p class="section-desc">A blend of product thinking and technical depth.</p>
+
         <div class="skills-container">
             <div class="skill-card">
                 <span class="card-label">Strategic Analytics</span>
@@ -212,13 +215,15 @@
                     <div class="pill">Product Analytics</div>
                 </div>
             </div>
+
             <div class="skill-card">
                 <span class="card-label">Technical Toolstack</span>
                 <div class="pill-group">
                     <div class="pill">SQL</div>
-                    <div class="pill">Python</div>
+                    <div class="pill">PySpark</div>
                     <div class="pill">Tableau</div>
-                    <div class="pill">Statistics and Hypothesis Testing</div>
+                    <div class="pill">Excel</div>
+                    <div class="pill">Statistics</div>
                     <div class="pill">Machine Learning</div>
                 </div>
             </div>
