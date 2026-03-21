@@ -259,6 +259,74 @@
             margin-bottom: 8px; 
             list-style-type: '→ ';
         }
+
+        /* --- Education Section --- */
+        #education {
+            background-color: #ffffff;
+            padding: 6rem 8%;
+            color: #1e293b;
+        }
+
+        .edu-grid {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+            margin-top: 3rem;
+        }
+
+        .edu-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 2.5rem;
+            flex: 1;
+            min-width: 320px;
+            transition: 0.3s ease;
+        }
+
+        .edu-card:hover {
+            border-color: var(--accent-blue);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+        }
+
+        .edu-card h3 {
+            font-size: 1.1rem;
+            margin: 0 0 8px 0;
+            color: #0f172a;
+        }
+
+        .school-link {
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .edu-meta {
+            color: #64748b;
+            font-size: 0.85rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .gpa-badge {
+            display: inline-block;
+            background: #fef3c7;
+            color: #92400e;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .edu-details {
+            color: #64748b;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
     </style>
 </head>
 <body>
@@ -387,6 +455,39 @@
                         </div>
                     </div>
                     <div class="date-tag">Sep 2021 – Mar 2022</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education">
+        <span class="sub-header">Background</span>
+        <h2 class="section-headline">Education</h2>
+        <p class="section-desc">Technical excellence combined with strategic management from India's premier institutions.</p>
+
+        <div class="edu-grid">
+            <div class="edu-card">
+                <h3>M.B.A.</h3>
+                <a href="#" class="school-link">SJMSOM, IIT Bombay</a>
+                <span class="edu-meta">2023 – 2025</span>
+                
+                <div class="gpa-badge">GPA: 8.3 / 10</div>
+                
+                <div class="edu-details">
+                    Batch Representative, Class of '25<br>
+                    Head, Humane-The HR Club
+                </div>
+            </div>
+
+            <div class="edu-card">
+                <h3>B.E. (Chemical)</h3>
+                <a href="#" class="school-link">BITS Pilani</a>
+                <span class="edu-meta">2017 – 2021</span>
+                
+                <div class="gpa-badge">GPA: 7.9 / 10</div>
+                
+                <div class="edu-details">
+                    Joint Secretary - CHEA<br>
                 </div>
             </div>
         </div>
