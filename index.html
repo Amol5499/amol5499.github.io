@@ -168,6 +168,97 @@
             font-weight: 500;
             box-shadow: 0 2px 4px rgba(0,0,0,0.02);
         }
+
+        /* --- Experience Section --- */
+        #experience {
+            background-color: #f8fafc; /* Very light grey for slight contrast from Skills */
+            padding: 6rem 8%;
+            color: #1e293b;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 4rem auto 0;
+            padding-left: 40px;
+        }
+
+        /* The vertical line */
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 7px;
+            top: 5px;
+            bottom: 5px;
+            width: 2px;
+            background: #e2e8f0;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        /* The colored dots */
+        .timeline-dot {
+            position: absolute;
+            left: -40px;
+            top: 10px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: white;
+            border: 3px solid var(--accent-blue);
+            z-index: 2;
+        }
+
+        .timeline-item:first-child .timeline-dot { border-color: var(--accent-yellow); }
+
+        /* The Experience Card */
+        .exp-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            transition: 0.3s;
+        }
+
+        .exp-card:hover { box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
+
+        .exp-header h3 { font-size: 1.2rem; margin: 0; color: #0f172a; }
+        .company-info { font-size: 0.85rem; color: var(--accent-blue); font-weight: 600; margin-top: 4px; }
+        .company-info span { color: #64748b; font-weight: 400; margin-left: 8px; }
+
+        .date-tag {
+            background: #f1f5f9;
+            color: #64748b;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        .current-tag {
+            background: #fef3c7;
+            color: #92400e;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.65rem;
+            margin-left: 8px;
+            text-transform: uppercase;
+        }
+
+        .exp-content { margin-top: 1.2rem; }
+        .exp-content ul { padding-left: 1.2rem; margin: 0; }
+        .exp-content li { 
+            color: #475569; 
+            font-size: 0.95rem; 
+            margin-bottom: 8px; 
+            list-style-type: '→ ';
+        }
     </style>
 </head>
 <body>
@@ -176,7 +267,7 @@
         <div class="logo">Amol <span>Agarwal</span></div>
         <div class="nav-links">
             <a href="#skills">Skills</a>
-            <a href="#">Experience</a>
+            <a href="#experience">Experience</a>
             <a href="#">Projects</a>
             <a href="#">Contact</a>
             <a href="#" class="active">About Me</a>
@@ -225,6 +316,63 @@
                     <div class="pill">Excel</div>
                     <div class="pill">Statistics</div>
                     <div class="pill">Machine Learning</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="experience">
+        <span class="sub-header">Career</span>
+        <h2 class="section-headline">Work Experience</h2>
+        <p class="section-desc">A journey through high-growth startups solving real user problems.</p>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="exp-card">
+                    <div class="exp-header">
+                        <h3>Product Manager <span class="current-tag">Current</span></h3>
+                        <div class="company-info">FRND • Full-time <span>Bengaluru</span></div>
+                        <div class="exp-content">
+                            <ul>
+                                <li>Working across Trust & Safety, User Retention, and AI to improve platform health and engagement.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="date-tag">Oct 2024 – Present</div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="exp-card">
+                    <div class="exp-header">
+                        <h3>Product Manager</h3>
+                        <div class="company-info">Pixis • Full-time <span>Bengaluru</span></div>
+                        <div class="exp-content">
+                            <ul>
+                                <li>Built a Campaign Management module enabling users to create, duplicate, and manage marketing campaigns on-the-go.</li>
+                                <li>Developed a Data Platform to serve all data needs across teams for multiple use cases.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="date-tag">Apr 2024 – Oct 2024</div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="exp-card">
+                    <div class="exp-header">
+                        <h3>Product Adoption Manager</h3>
+                        <div class="company-info">Pixis • Full-time <span>Bengaluru</span></div>
+                        <div class="exp-content">
+                            <ul>
+                                <li>Automated key steps in the product support process, reducing issue analysis time by 75%.</li>
+                                <li>Collaborated with Product, Business, and Customer Success teams to drive product adoption among clients.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="date-tag">Apr 2023 – Mar 2024</div>
                 </div>
             </div>
         </div>
