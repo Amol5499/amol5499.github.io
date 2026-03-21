@@ -3,181 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vishesh Arora | Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Your Profile | Data Professional</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg-dark: #0a1120;
             --accent-yellow: #f4b400;
             --accent-blue: #2d74ff;
             --text-main: #ffffff;
-            --section-light: #f8fafc; /* Light background for skills */
-            --pill-bg: #ffffff;
-            --pill-border: #e2e8f0;
+            --text-dim: #a0aec0;
         }
-
-        html { scroll-behavior: smooth; }
 
         body {
             margin: 0;
-            font-family: 'Inter', sans-serif;
+            padding: 0;
             background-color: var(--bg-dark);
+            /* Creating the subtle blue glow effect seen in your image */
+            background-image: radial-gradient(circle at 10% 20%, rgba(45, 116, 255, 0.15) 0%, transparent 40%);
             color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
         }
 
-        /* --- Header & Hero --- */
+        /* Navigation */
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1.5rem 8%;
-            position: fixed;
-            width: 84%;
-            top: 0;
-            z-index: 1000;
-            background: rgba(10, 17, 32, 0.8);
-            backdrop-filter: blur(10px);
+            padding: 2rem 5%;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        .logo { font-weight: 700; font-size: 1.2rem; color: white; text-decoration: none; }
+        .logo { font-weight: 700; font-size: 1.2rem; }
         .logo span { color: var(--accent-yellow); }
 
         .nav-links a {
-            color: #a0aec0;
+            color: var(--text-dim);
             text-decoration: none;
-            margin-left: 30px;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            font-weight: 600;
+            margin-left: 25px;
+            transition: 0.3s;
         }
 
+        .nav-links a:hover, .nav-links a.active { color: var(--text-main); }
+        .active { color: var(--accent-yellow) !important; border-bottom: 1px solid var(--accent-yellow); }
+
+        /* Hero Section */
         .hero {
-            padding: 10rem 8% 6rem;
-            background-image: radial-gradient(circle at 5% 15%, rgba(45, 116, 254, 0.1) 0%, transparent 40%);
+            padding: 5rem 10%;
+            max-width: 900px;
         }
 
-        h1 { font-family: 'Playfair Display', serif; font-size: 4.5rem; margin-bottom: 2rem; }
+        .badge {
+            display: inline-block;
+            background: rgba(45, 116, 255, 0.1);
+            border: 1px solid rgba(45, 116, 255, 0.3);
+            color: var(--accent-blue);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3rem, 8vw, 5rem);
+            line-height: 1.1;
+            margin: 0 0 2rem 0;
+        }
+
         h1 em { color: var(--accent-yellow); font-style: italic; }
 
-        /* --- Skills Section (The Light Section) --- */
-        #skills {
-            background-color: var(--section-light);
-            padding: 6rem 8%;
-            color: #1e293b; /* Dark text for light section */
-        }
-
-        .sub-header {
-            color: var(--accent-blue);
-            text-transform: uppercase;
-            font-size: 0.75rem;
-            font-weight: 700;
-            letter-spacing: 1.5px;
-            margin-bottom: 1rem;
-        }
-
-        .section-headline {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.8rem;
-            margin: 0 0 1rem 0;
-        }
-
-        .section-desc {
-            color: #64748b;
+        .description {
             font-size: 1.1rem;
+            color: var(--text-dim);
+            max-width: 600px;
             margin-bottom: 3rem;
         }
 
-        /* Card Layout */
-        .skills-container {
-            display: flex;
-            gap: 24px;
-            flex-wrap: wrap;
+        /* Buttons */
+        .btn-group { display: flex; gap: 20px; }
+
+        .btn {
+            padding: 12px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
         }
 
-        .skill-card {
-            background: #f1f5f9;
-            border: 1px solid #e2e8f0;
-            border-radius: 16px;
-            padding: 2rem;
-            flex: 1;
-            min-width: 300px;
+        .btn-primary {
+            background: var(--accent-blue);
+            color: white;
         }
 
-        .card-label {
-            color: var(--accent-blue);
-            font-size: 0.7rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 1.5rem;
-            display: block;
+        .btn-primary:hover { background: #1a56cc; transform: translateY(-2px); }
+
+        .btn-outline {
+            border: 1px solid #334155;
+            color: white;
         }
 
-        .pill-group {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
+        .btn-outline:hover { background: rgba(255,255,255,0.05); }
 
-        .pill {
-            background: var(--pill-bg);
-            border: 1px solid var(--pill-border);
-            padding: 8px 18px;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            color: #334155;
-            font-weight: 500;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-        }
     </style>
 </head>
 <body>
 
     <nav>
-        <a href="#" class="logo">Vishesh <span>Arora</span></a>
+        <div class="logo">Amol <span>Agarwal</span></div>
         <div class="nav-links">
-            <a href="#skills">Skills</a>
+            <a href="#">Skills</a>
             <a href="#">Experience</a>
             <a href="#">Projects</a>
             <a href="#">Contact</a>
+            <a href="#" class="active">About Me</a>
         </div>
     </nav>
 
     <section class="hero">
-        <h1>Building data stories that <em>matter.</em></h1>
-        <p style="color: #a0aec0; max-width: 600px; font-size: 1.1rem;">
-            Data Analyst and Tableau enthusiast based in Pune. I turn complex data into visual narratives.
+        <div class="badge">Product Specialist • Pune, India</div>
+        <h1>Building insights that <em>matter.</em></h1>
+        
+        <p class="description">
+            I specialize in transforming complex data into actionable stories using Tableau and SQL. 
+            I thrive at the intersection of business intelligence and user-centric design—turning 
+            raw numbers into clear, measurable decisions through analytical thinking.
         </p>
-    </section>
 
-    <section id="skills">
-        <span class="sub-header">What I Bring</span>
-        <h2 class="section-headline">Skills & Tools</h2>
-        <p class="section-desc">A blend of analytical thinking and technical depth.</p>
-
-        <div class="skills-container">
-            <div class="skill-card">
-                <span class="card-label">Core Competencies</span>
-                <div class="pill-group">
-                    <div class="pill">Tableau Visualizations</div>
-                    <div class="pill">Data Storytelling</div>
-                    <div class="pill">KPI Design</div>
-                    <div class="pill">Problem Solving</div>
-                    <div class="pill">Structured Thinking</div>
-                </div>
-            </div>
-
-            <div class="skill-card">
-                <span class="card-label">Proficient Tools</span>
-                <div class="pill-group">
-                    <div class="pill">SQL</div>
-                    <div class="pill">PySpark</div>
-                    <div class="pill">PostgreSQL</div>
-                    <div class="pill">BigQuery</div>
-                    <div class="pill">Jira</div>
-                    <div class="pill">GitHub</div>
-                </div>
-            </div>
+        <div class="btn-group">
+            <a href="#" class="btn btn-primary">View Projects</a>
+            <a href="#" class="btn btn-outline">Get In Touch</a>
         </div>
     </section>
 
