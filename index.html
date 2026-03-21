@@ -3,79 +3,142 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Professional Profile</title>
+    <title>Your Profile | Data Professional</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-bg: #f4f7f6;
-            --card-bg: #ffffff;
-            --text-color: #333;
-            --accent-color: #007bff;
+            --bg-dark: #0a1120;
+            --accent-yellow: #f4b400;
+            --accent-blue: #2d74ff;
+            --text-main: #ffffff;
+            --text-dim: #a0aec0;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--primary-bg);
-            color: var(--text-color);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
             margin: 0;
+            padding: 0;
+            background-color: var(--bg-dark);
+            /* Creating the subtle blue glow effect seen in your image */
+            background-image: radial-gradient(circle at 10% 20%, rgba(45, 116, 255, 0.15) 0%, transparent 40%);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
         }
 
-        .profile-card {
-            background: var(--card-bg);
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            text-align: center;
-            max-width: 400px;
-            width: 90%;
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem 5%;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        .profile-pic {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid var(--accent-color);
-        }
+        .logo { font-weight: 700; font-size: 1.2rem; }
+        .logo span { color: var(--accent-yellow); }
 
-        h1 { margin: 15px 0 5px; font-size: 1.5rem; }
-        p { color: #666; margin-bottom: 25px; }
-
-        .links { display: flex; flex-direction: column; gap: 15px; }
-
-        .link-item {
+        .nav-links a {
+            color: var(--text-dim);
             text-decoration: none;
-            color: white;
-            background-color: var(--accent-color);
-            padding: 12px;
-            border-radius: 8px;
-            transition: transform 0.2s, background-color 0.2s;
-            font-weight: bold;
+            margin-left: 25px;
+            transition: 0.3s;
         }
 
-        .link-item:hover {
-            background-color: #0056b3;
-            transform: translateY(-2px);
+        .nav-links a:hover, .nav-links a.active { color: var(--text-main); }
+        .active { color: var(--accent-yellow) !important; border-bottom: 1px solid var(--accent-yellow); }
+
+        /* Hero Section */
+        .hero {
+            padding: 5rem 10%;
+            max-width: 900px;
         }
+
+        .badge {
+            display: inline-block;
+            background: rgba(45, 116, 255, 0.1);
+            border: 1px solid rgba(45, 116, 255, 0.3);
+            color: var(--accent-blue);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3rem, 8vw, 5rem);
+            line-height: 1.1;
+            margin: 0 0 2rem 0;
+        }
+
+        h1 em { color: var(--accent-yellow); font-style: italic; }
+
+        .description {
+            font-size: 1.1rem;
+            color: var(--text-dim);
+            max-width: 600px;
+            margin-bottom: 3rem;
+        }
+
+        /* Buttons */
+        .btn-group { display: flex; gap: 20px; }
+
+        .btn {
+            padding: 12px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: var(--accent-blue);
+            color: white;
+        }
+
+        .btn-primary:hover { background: #1a56cc; transform: translateY(-2px); }
+
+        .btn-outline {
+            border: 1px solid #334155;
+            color: white;
+        }
+
+        .btn-outline:hover { background: rgba(255,255,255,0.05); }
+
     </style>
 </head>
 <body>
 
-    <div class="profile-card">
-        <img src="https://via.placeholder.com/150" alt="Profile Picture" class="profile-pic">
-        
-        <h1>Your Name</h1>
-        <p>Data Analyst | Tableau & SQL Enthusiast</p>
-
-        <div class="links">
-            <a href="https://github.com/yourusername" class="link-item">GitHub Portfolio</a>
-            <a href="https://linkedin.com/in/yourusername" class="link-item">LinkedIn</a>
-            <a href="mailto:yourname@email.com" class="link-item">Contact Me</a>
+    <nav>
+        <div class="logo">Vishesh <span>Arora</span></div>
+        <div class="nav-links">
+            <a href="#">Skills</a>
+            <a href="#">Experience</a>
+            <a href="#">Projects</a>
+            <a href="#">Contact</a>
+            <a href="#" class="active">About Me</a>
         </div>
-    </div>
+    </nav>
+
+    <section class="hero">
+        <div class="badge">Data Analyst • Pune, India</div>
+        <h1>Building insights that <em>matter.</em></h1>
+        
+        <p class="description">
+            I specialize in transforming complex data into actionable stories using Tableau and SQL. 
+            I thrive at the intersection of business intelligence and user-centric design—turning 
+            raw numbers into clear, measurable decisions through analytical thinking.
+        </p>
+
+        <div class="btn-group">
+            <a href="#" class="btn btn-primary">View Projects</a>
+            <a href="#" class="btn btn-outline">Get In Touch</a>
+        </div>
+    </section>
 
 </body>
 </html>
