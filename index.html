@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Profile | Data Professional</title>
+    <title>Amol Agarwal | Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -12,13 +12,16 @@
             --accent-blue: #2d74ff;
             --text-main: #ffffff;
             --text-dim: #a0aec0;
+            --section-light: #ffffff; /* Background for skills section */
         }
+
+        /* Enables smooth sliding when clicking links */
+        html { scroll-behavior: smooth; }
 
         body {
             margin: 0;
             padding: 0;
             background-color: var(--bg-dark);
-            /* Creating the subtle blue glow effect seen in your image */
             background-image: radial-gradient(circle at 10% 20%, rgba(45, 116, 255, 0.15) 0%, transparent 40%);
             color: var(--text-main);
             font-family: 'Inter', sans-serif;
@@ -30,10 +33,13 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 2rem 5%;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            padding: 2rem 8%;
+            position: fixed; /* Keeps nav visible while scrolling */
+            top: 0;
+            width: 84%;
+            background: rgba(10, 17, 32, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
         }
 
         .logo { font-weight: 700; font-size: 1.2rem; }
@@ -43,6 +49,9 @@
             color: var(--text-dim);
             text-decoration: none;
             margin-left: 25px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            font-weight: 600;
             transition: 0.3s;
         }
 
@@ -51,7 +60,7 @@
 
         /* Hero Section */
         .hero {
-            padding: 5rem 10%;
+            padding: 12rem 8% 8rem;
             max-width: 900px;
         }
 
@@ -84,9 +93,7 @@
             margin-bottom: 3rem;
         }
 
-        /* Buttons */
         .btn-group { display: flex; gap: 20px; }
-
         .btn {
             padding: 12px 30px;
             border-radius: 8px;
@@ -95,20 +102,72 @@
             transition: 0.3s;
         }
 
-        .btn-primary {
-            background: var(--accent-blue);
-            color: white;
-        }
-
+        .btn-primary { background: var(--accent-blue); color: white; }
         .btn-primary:hover { background: #1a56cc; transform: translateY(-2px); }
-
-        .btn-outline {
-            border: 1px solid #334155;
-            color: white;
-        }
-
+        .btn-outline { border: 1px solid #334155; color: white; }
         .btn-outline:hover { background: rgba(255,255,255,0.05); }
 
+        /* --- Skills Section (White Background) --- */
+        #skills {
+            background-color: var(--section-light);
+            padding: 6rem 8%;
+            color: #1e293b;
+        }
+
+        .sub-header {
+            color: var(--accent-blue);
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .section-headline {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            margin: 0 0 1rem 0;
+        }
+
+        .section-desc { color: #64748b; font-size: 1.1rem; margin-bottom: 3rem; }
+
+        .skills-container {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .skill-card {
+            background: #f1f5f9;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 2.5rem;
+            flex: 1;
+            min-width: 320px;
+        }
+
+        .card-label {
+            color: var(--accent-blue);
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .pill-group { display: flex; flex-wrap: wrap; gap: 10px; }
+
+        .pill {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            padding: 8px 18px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            color: #334155;
+            font-weight: 500;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
     </style>
 </head>
 <body>
@@ -116,7 +175,7 @@
     <nav>
         <div class="logo">Amol <span>Agarwal</span></div>
         <div class="nav-links">
-            <a href="#">Skills</a>
+            <a href="#skills">Skills</a>
             <a href="#">Experience</a>
             <a href="#">Projects</a>
             <a href="#">Contact</a>
@@ -137,6 +196,37 @@
         <div class="btn-group">
             <a href="#" class="btn btn-primary">View Projects</a>
             <a href="#" class="btn btn-outline">Get In Touch</a>
+        </div>
+    </section>
+
+    <section id="skills">
+        <span class="sub-header">What I Bring</span>
+        <h2 class="section-headline">Skills & Tools</h2>
+        <p class="section-desc">A blend of product thinking and technical depth.</p>
+
+        <div class="skills-container">
+            <div class="skill-card">
+                <span class="card-label">Strategic Analytics</span>
+                <div class="pill-group">
+                    <div class="pill">Tableau Visualizations</div>
+                    <div class="pill">Data Storytelling</div>
+                    <div class="pill">KPI Mapping</div>
+                    <div class="pill">First Principles</div>
+                    <div class="pill">Structured Thinking</div>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <span class="card-label">Technical Toolstack</span>
+                <div class="pill-group">
+                    <div class="pill">SQL (PostgreSQL)</div>
+                    <div class="pill">PySpark</div>
+                    <div class="pill">BigQuery</div>
+                    <div class="pill">GitHub</div>
+                    <div class="pill">Jira</div>
+                    <div class="pill">Excel</div>
+                </div>
+            </div>
         </div>
     </section>
 
