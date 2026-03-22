@@ -328,102 +328,126 @@
             line-height: 1.5;
         }
 
-        /* --- Contact Section (Dark) --- */
+/* --- Contact Section Refined --- */
         #contact {
             padding: 8rem 8%;
-            background-color: var(--bg-dark);
+            background-color: #0a1120; /* Deep dark blue matching your hero */
             color: white;
         }
 
-        .contact-container {
+        .contact-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
+            grid-template-columns: 1fr 1.2fr; /* Slightly wider for the resume side */
+            gap: 60px;
+            align-items: start;
             margin-top: 3rem;
         }
 
-        .contact-info { display: flex; flex-direction: column; gap: 20px; }
+        /* Left Side: Contact Cards */
+        .contact-methods {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
 
         .contact-card {
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.03);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 1.2rem;
             border-radius: 12px;
+            padding: 18px 24px;
             display: flex;
+            justify-content: space-between; /* Pushes the icon to the right */
             align-items: center;
-            gap: 15px;
-            color: var(--text-dim);
             text-decoration: none;
+            color: var(--text-dim);
             transition: 0.3s;
         }
 
-        .contact-card:hover { border-color: var(--accent-yellow); color: white; }
+        .contact-card:hover {
+            border-color: var(--accent-blue);
+            background: rgba(45, 116, 255, 0.05);
+            color: white;
+        }
 
-        .social-row { display: flex; gap: 15px; margin-top: 10px; }
-        .social-icon {
+        .card-content { display: flex; align-items: center; gap: 15px; }
+        .card-icon { color: var(--accent-blue); font-size: 1.2rem; }
+        .copy-icon { opacity: 0.4; font-size: 0.9rem; }
+
+        .social-links { display: flex; gap: 12px; margin-top: 20px; }
+        .social-box {
             background: rgba(255, 255, 255, 0.05);
-            width: 45px;
-            height: 45px;
-            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            width: 48px;
+            height: 48px;
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
             text-decoration: none;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: 0.3s;
         }
+        .social-box:hover { border-color: var(--accent-yellow); transform: translateY(-3px); }
 
-        /* Resume Box */
-        .resume-box {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            padding: 3rem;
+        /* Right Side: Resume Box */
+        .resume-container {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 24px;
+            padding: 4rem 2rem;
             text-align: center;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
         }
 
-        .resume-box h3 { font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 1rem; }
-        .resume-box p { color: var(--text-dim); margin-bottom: 2rem; max-width: 300px; }
+        .resume-container h3 { 
+            font-family: 'Playfair Display', serif; 
+            font-size: 2.2rem; 
+            margin-bottom: 1rem; 
+        }
 
-        .btn-download {
-            background: var(--accent-yellow);
+        .resume-container p { 
+            color: var(--text-dim); 
+            font-size: 0.95rem; 
+            max-width: 320px; 
+            margin-bottom: 2.5rem; 
+            line-height: 1.6;
+        }
+
+        .download-btn {
+            background: #f4b400; /* Matching your --accent-yellow */
             color: #000;
-            padding: 15px 35px;
-            border-radius: 8px;
+            padding: 16px 40px;
+            border-radius: 10px;
             font-weight: 700;
             text-decoration: none;
             transition: 0.3s;
+            display: inline-block;
         }
 
-        .btn-download:hover { transform: scale(1.05); box-shadow: 0 0 20px rgba(244, 180, 0, 0.3); }
+        .download-btn:hover { 
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(244, 180, 0, 0.2);
+        }
 
-        /* Scroll Top Button */
-        .scroll-top {
+        /* Fixed Top Button */
+        .top-btn {
             position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: rgba(255, 255, 255, 0.05);
+            bottom: 40px;
+            right: 40px;
+            background: rgba(10, 17, 32, 0.8);
             border: 1px solid rgba(255, 255, 255, 0.1);
             color: var(--text-dim);
-            padding: 12px;
+            padding: 10px 15px;
             border-radius: 8px;
             text-decoration: none;
-            font-size: 0.7rem;
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            font-weight: 700;
             text-align: center;
             backdrop-filter: blur(10px);
             z-index: 1000;
-        }
-
-        footer {
-            text-align: center;
-            padding: 4rem 0 2rem;
-            color: #475569;
-            font-size: 0.8rem;
-            border-top: 1px solid rgba(255,255,255,0.05);
         }
     </style>
 </head>
@@ -596,31 +620,43 @@
         <h2 class="section-headline" style="color: white;">Get in Touch</h2>
         <p class="section-desc">Open to interesting conversations about product, data, or new opportunities.</p>
 
-        <div class="contact-container">
-            <div class="contact-info">
+        <div class="contact-grid">
+            <div class="contact-methods">
                 <a href="mailto:amolagarwal9d@gmail.com" class="contact-card">
-                    <span>📧</span> amolagarwal9d@gmail.com
+                    <div class="card-content">
+                        <span class="card-icon">✉️</span>
+                        <span>amolagarwal9d@gmail.com</span>
+                    </div>
+                    <span class="copy-icon">❐</span>
                 </a>
+
                 <a href="tel:+918826404780" class="contact-card">
-                    <span>📞</span> +91 8826404780
+                    <div class="card-content">
+                        <span class="card-icon">📞</span>
+                        <span>+91 8826404780</span>
+                    </div>
+                    <span class="copy-icon">❐</span>
                 </a>
-                <div class="social-row">
-                    <a href="https://www.linkedin.com/in/amolagarwall" class="social-icon">Li</a>
-                    <a href="https://github.com/amol5499" class="social-icon">Gh</a>
+
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/amolagarwall" target="_blank" class="social-box">in</a>
+                    <a href="https://github.com/amol5499" target="_blank" class="social-box">gh</a>
                 </div>
             </div>
 
-            <div class="resume-box">
+            <div class="resume-container">
                 <h3>Resume</h3>
-                <p>Download my full resume to see my complete experience and achievements.</p>
-                <a href="Amol_Agarwal_CV.pdf" class="btn-download" download>Download Resume</a>
+                <p>Download my full resume to see my complete experience, certifications, and achievements.</p>
+                <a href="Amol_Agarwal_CV.pdf" class="download-btn" download>Download Resume</a>
             </div>
         </div>
 
-        <footer>
+        <footer style="text-align: center; margin-top: 6rem; color: #475569; font-size: 0.8rem;">
             © 2026 Amol Agarwal • Built with HTML & hosted on GitHub Pages
         </footer>
     </section>
+
+    <a href="#" class="top-btn">↑<br>TOP</a>
 
     <a href="#" class="scroll-top">↑<br>TOP</a>
 
