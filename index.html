@@ -327,40 +327,42 @@
             font-size: 0.9rem;
             line-height: 1.5;
         }
-
-/* --- Contact Section Refined --- */
+/* --- Contact Section: Symmetrical Layout --- */
         #contact {
-            padding: 8rem 8%;
-            background-color: #0a1120; /* Deep dark blue matching your hero */
+            padding: 6rem 8% 4rem; /* Reduced top padding for better flow */
+            background-color: #0a1120;
             color: white;
         }
 
         .contact-grid {
             display: grid;
-            grid-template-columns: 1fr 1.2fr; /* Slightly wider for the resume side */
-            gap: 60px;
-            align-items: start;
+            grid-template-columns: 1fr 1fr; /* Balanced 50/50 split */
+            gap: 30px;
             margin-top: 3rem;
+            align-items: stretch; /* Forces both columns to be equal height */
         }
 
         /* Left Side: Contact Cards */
         .contact-methods {
             display: flex;
             flex-direction: column;
-            gap: 16px;
+            gap: 12px;
+            justify-content: flex-start;
         }
 
         .contact-card {
             background: rgba(255, 255, 255, 0.03);
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 12px;
-            padding: 18px 24px;
+            padding: 20px 24px;
             display: flex;
-            justify-content: space-between; /* Pushes the icon to the right */
+            justify-content: space-between;
             align-items: center;
             text-decoration: none;
             color: var(--text-dim);
             transition: 0.3s;
+            height: 60px; /* Fixed height for consistency */
+            box-sizing: border-box;
         }
 
         .contact-card:hover {
@@ -370,16 +372,16 @@
         }
 
         .card-content { display: flex; align-items: center; gap: 15px; }
-        .card-icon { color: var(--accent-blue); font-size: 1.2rem; }
-        .copy-icon { opacity: 0.4; font-size: 0.9rem; }
+        .copy-icon { opacity: 0.3; font-size: 0.8rem; }
 
-        .social-links { display: flex; gap: 12px; margin-top: 20px; }
+        .social-links { display: flex; gap: 12px; margin-top: auto; } /* Pushes socials to the bottom */
+        
         .social-box {
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            width: 48px;
-            height: 48px;
-            border-radius: 10px;
+            width: 44px;
+            height: 44px;
+            border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -387,64 +389,58 @@
             text-decoration: none;
             transition: 0.3s;
         }
-        .social-box:hover { border-color: var(--accent-yellow); transform: translateY(-3px); }
 
         /* Right Side: Resume Box */
         .resume-container {
             background: rgba(255, 255, 255, 0.02);
             border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 24px;
-            padding: 4rem 2rem;
+            border-radius: 20px;
+            padding: 40px;
             text-align: center;
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center; /* Centers content vertically */
+            height: 100%; /* Spans full height of the grid row */
+            box-sizing: border-box;
         }
 
         .resume-container h3 { 
             font-family: 'Playfair Display', serif; 
-            font-size: 2.2rem; 
-            margin-bottom: 1rem; 
+            font-size: 2rem; 
+            margin: 0 0 10px 0; 
         }
 
         .resume-container p { 
             color: var(--text-dim); 
-            font-size: 0.95rem; 
-            max-width: 320px; 
-            margin-bottom: 2.5rem; 
-            line-height: 1.6;
+            font-size: 0.9rem; 
+            max-width: 280px; 
+            margin-bottom: 25px; 
         }
 
         .download-btn {
-            background: #f4b400; /* Matching your --accent-yellow */
+            background: #f4b400;
             color: #000;
-            padding: 16px 40px;
-            border-radius: 10px;
+            padding: 14px 32px;
+            border-radius: 8px;
             font-weight: 700;
             text-decoration: none;
             transition: 0.3s;
-            display: inline-block;
-        }
-
-        .download-btn:hover { 
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(244, 180, 0, 0.2);
         }
 
         /* Fixed Top Button */
         .top-btn {
             position: fixed;
-            bottom: 40px;
-            right: 40px;
-            background: rgba(10, 17, 32, 0.8);
+            bottom: 30px;
+            right: 30px;
+            background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            color: var(--text-dim);
-            padding: 10px 15px;
+            color: #64748b;
+            padding: 10px;
             border-radius: 8px;
             text-decoration: none;
-            font-size: 0.65rem;
-            text-transform: uppercase;
-            font-weight: 700;
+            font-size: 10px;
+            line-height: 1.2;
             text-align: center;
             backdrop-filter: blur(10px);
             z-index: 1000;
