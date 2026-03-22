@@ -422,6 +422,47 @@
             font-size: 0.9rem;
             text-decoration: none;
         }
+        /* --- Grid Alignment Fix --- */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Forces two equal columns */
+    gap: 40px;
+    margin-top: 3rem;
+    align-items: stretch; /* Makes both boxes the same height */
+    max-width: 1100px;
+}
+
+.contact-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.resume-container {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%; /* Important for matching heights */
+    box-sizing: border-box;
+}
+
+/* Mobile Responsive: Stacks on small screens */
+@media (max-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .resume-container {
+        padding: 30px 20px;
+    }
+}
     </style>
 </head>
 <body>
