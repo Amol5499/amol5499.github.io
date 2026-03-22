@@ -327,123 +327,99 @@
             font-size: 0.9rem;
             line-height: 1.5;
         }
-/* --- Contact Section: Symmetrical Layout --- */
+/* --- Compact Contact Section --- */
         #contact {
-            padding: 6rem 8% 4rem; /* Reduced top padding for better flow */
+            padding: 4rem 8% 2rem; /* Reduced top and bottom padding */
             background-color: #0a1120;
             color: white;
         }
 
         .contact-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr; /* Balanced 50/50 split */
-            gap: 30px;
-            margin-top: 3rem;
-            align-items: stretch; /* Forces both columns to be equal height */
+            grid-template-columns: 1fr 1fr;
+            gap: 24px; /* Tighter gap */
+            margin-top: 2rem; /* Reduced margin from headline */
+            align-items: stretch;
         }
 
         /* Left Side: Contact Cards */
         .contact-methods {
             display: flex;
             flex-direction: column;
-            gap: 12px;
-            justify-content: flex-start;
+            gap: 10px; /* Tighter gap between cards */
         }
 
         .contact-card {
             background: rgba(255, 255, 255, 0.03);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            padding: 20px 24px;
+            border-radius: 10px;
+            padding: 14px 20px; /* Slimmer internal padding */
             display: flex;
             justify-content: space-between;
             align-items: center;
             text-decoration: none;
             color: var(--text-dim);
             transition: 0.3s;
-            height: 60px; /* Fixed height for consistency */
+            height: 52px; /* Reduced fixed height */
             box-sizing: border-box;
         }
 
-        .contact-card:hover {
-            border-color: var(--accent-blue);
-            background: rgba(45, 116, 255, 0.05);
-            color: white;
+        .social-links { 
+            display: flex; 
+            gap: 10px; 
+            margin-top: 10px; /* Removed 'auto' to keep it close to cards */
         }
-
-        .card-content { display: flex; align-items: center; gap: 15px; }
-        .copy-icon { opacity: 0.3; font-size: 0.8rem; }
-
-        .social-links { display: flex; gap: 12px; margin-top: auto; } /* Pushes socials to the bottom */
         
         .social-box {
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            width: 44px;
-            height: 44px;
+            width: 40px;
+            height: 40px;
             border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
             text-decoration: none;
-            transition: 0.3s;
+            font-size: 0.9rem;
         }
 
         /* Right Side: Resume Box */
         .resume-container {
             background: rgba(255, 255, 255, 0.02);
             border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 20px;
-            padding: 40px;
+            border-radius: 16px;
+            padding: 25px; /* Significantly reduced padding */
             text-align: center;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center; /* Centers content vertically */
-            height: 100%; /* Spans full height of the grid row */
+            justify-content: center;
             box-sizing: border-box;
         }
 
         .resume-container h3 { 
             font-family: 'Playfair Display', serif; 
-            font-size: 2rem; 
-            margin: 0 0 10px 0; 
+            font-size: 1.6rem; /* Slightly smaller heading */
+            margin: 0 0 5px 0; 
         }
 
         .resume-container p { 
             color: var(--text-dim); 
-            font-size: 0.9rem; 
-            max-width: 280px; 
-            margin-bottom: 25px; 
+            font-size: 0.85rem; 
+            max-width: 240px; 
+            margin-bottom: 15px; 
+            line-height: 1.4;
         }
 
         .download-btn {
             background: #f4b400;
             color: #000;
-            padding: 14px 32px;
-            border-radius: 8px;
+            padding: 10px 24px; /* Smaller button */
+            border-radius: 6px;
             font-weight: 700;
+            font-size: 0.9rem;
             text-decoration: none;
-            transition: 0.3s;
-        }
-
-        /* Fixed Top Button */
-        .top-btn {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            color: #64748b;
-            padding: 10px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-size: 10px;
-            line-height: 1.2;
-            text-align: center;
-            backdrop-filter: blur(10px);
-            z-index: 1000;
         }
     </style>
 </head>
@@ -653,8 +629,6 @@
     </section>
 
     <a href="#" class="top-btn">↑<br>TOP</a>
-
-    <a href="#" class="scroll-top">↑<br>TOP</a>
 
 </body>
 </html>
